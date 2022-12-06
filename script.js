@@ -46,10 +46,10 @@ function loop()
     {py = 0;}
 
   // раскраска змеи и ее частей
-  ctx.fillStyle = 'lime';
+  ctx.fillStyle = 'green';
   for( let i = 0; i < parttail.length; i++ )
   {
-    ctx.fillStyle = parttail[i].color || 'lime';
+    ctx.fillStyle = parttail[i].color || 'geen';
     ctx.fillRect(parttail[i].x, parttail[i].y, pw, ph);
   }
 
@@ -122,14 +122,14 @@ function loop()
   }
 }
 
-// спавн точек
+// появление точек (яблок)
 function spawnApple()
 {
   let
     newApple = {
       x: ~~(Math.random() * canv.width),
       y: ~~(Math.random() * canv.height),
-      color: 'red'
+      color: '#'+(0x1000000+Math.random()*0x00FFFF).toString(16).substr(1,6)
     };
 
   // запрет появляться близко к краям
@@ -173,6 +173,7 @@ function rc()
 {
   return '#' + ((~~(Math.random() * 255)).toString(16)) + ((~~(Math.random() * 255)).toString(16)) + 
   ((~~(Math.random() * 255)).toString(16));
+  
 }
 
 // регулятор скорости
