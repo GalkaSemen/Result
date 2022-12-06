@@ -129,7 +129,7 @@ function spawnApple()
     newApple = {
       x: ~~(Math.random() * canv.width),
       y: ~~(Math.random() * canv.height),
-      color: '#'+(0x1000000+Math.random()*0x00FFFF).toString(16).substr(1,6)
+      color: '#'+(0x1000000+Math.random()*0xFFFFFF).toString(16).substr(1,6)
     };
 
   // запрет появляться близко к краям
